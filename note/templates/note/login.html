@@ -1,0 +1,109 @@
+{% load static %} <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sistema de Apontamento</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .login-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .login-container label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        .login-container input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn-login {
+            background-color: #5cb85c;
+            color: white;
+        }
+        .btn-login:hover {
+            background-color: #4cae4c;
+        }
+        .btn-terminal {
+            background-color: #f0ad4e;
+            color: white;
+        }
+        .btn-terminal:hover {
+            background-color: #eea236;
+        }
+        .btn-admin {
+            background-color: #337ab7;
+            color: white;
+        }
+        .btn-admin:hover {
+            background-color: #286090;
+        }
+        .header-info {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-align: right;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login Operacional</h2>
+        <div>
+            <label for="codOperador">Código do Operador:</label>
+            <input type="text" id="codOperador" name="codOperador">
+        </div>
+        <div>
+            <label for="codEquipamento">Código do Equipamento:</label>
+            <input type="text" id="codEquipamento" name="codEquipamento">
+        </div>
+        <button class="btn-login" id="btnLogin">Login</button>
+        <button class="btn-terminal" id="btnTerminal">Terminal</button>
+        <button class="btn-admin" id="btnAdmin">Administrador</button>
+    </div>
+
+    <div class="header-info" id="headerInfo">
+        <span id="infoOperador"></span> | <span id="infoEquipamento"></span>
+    </div>
+
+    <script src="{% static 'apontamento/js/login.js' %}"></script>
+</body>
+</html>

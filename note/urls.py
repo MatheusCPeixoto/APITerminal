@@ -1,6 +1,7 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from .views import *
+from . import views
 
 router = DefaultRouter()
 router.register(r'ordem', orderViewSet)
@@ -21,6 +22,9 @@ router.register(r'apontamentonaoconformidade', noteNonComplianceViewSet)
 router.register(r'paradaequipamento', noteEquipmentStopViewSet)
 router.register(r'paradaoperador', noteOperatorStopViewSet)
 
+app_name = 'apontamento'
+
 urlpatterns = [
+    path('login/', views.pagina_login, name='pagina_login'),
     path('', include(router.urls)),
- ]
+]

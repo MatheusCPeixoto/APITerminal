@@ -107,3 +107,6 @@ class noteOperatorStopViewSet(viewsets.ModelViewSet):
     serializer_class = noteOperatorStopSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_class = noteOperatorStopFilter
+    
+def pagina_login(request):
+    return render(request, 'note/login.html')
