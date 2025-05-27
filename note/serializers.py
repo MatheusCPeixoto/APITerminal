@@ -60,7 +60,7 @@ class equipmentSerializer(serializers.ModelSerializer):
 class operatorSerializer(serializers.ModelSerializer):
     class Meta:
         model = FMaoobra
-        fields = ('codigo', 'idoperador', 'nome', 'ativa', 'cracha')
+        fields = ('codigo', 'idmaoobra', 'nome', 'ativa', 'cracha')
 
 class noteActivitySerializer(serializers.ModelSerializer):
     class Meta:
